@@ -1,18 +1,15 @@
-package com.kindsonthegenius.thymeleafapp.models;
+package com.java.thymeleafapp.model;
 
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Student {
-	
-	@Id
+
+	@javax.persistence.Id
 	private Integer Id;
 	private String name;
 	private String department;
@@ -20,18 +17,18 @@ public class Student {
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedOn;
-	
-	public Student() {
-		
-	}
 
-	public Student(Integer id, String name, String department, String updatedBy, Date updatedOn) {
+	public Student(String name, String department, String updatedBy, Date updatedOn) {
 		super();
-		Id = id;
 		this.name = name;
 		this.department = department;
 		this.updatedBy = updatedBy;
 		this.updatedOn = updatedOn;
+	}
+
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public Integer getId() {
@@ -81,5 +78,5 @@ public class Student {
 	}
 	
 	
-
+	
 }

@@ -1,4 +1,4 @@
-package com.kindsonthegenius.thymeleafapp.services;
+package com.java.thymeleafapp.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,15 +6,14 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kindsonthegenius.thymeleafapp.models.Student;
-import com.kindsonthegenius.thymeleafapp.repositories.StudentRepository;
+import com.java.thymeleafapp.model.Student;
+import com.java.thymeleafapp.repository.StudentRepository;
 
 @Service
 public class StudentService {
 
 	@Autowired
 	private StudentRepository studentRepository;
-	
 	
 	public List<Student> getAll() {
 		return (List<Student>) studentRepository.findAll();
@@ -36,5 +35,4 @@ public class StudentService {
 	public void delete(Integer Id) {
 		studentRepository.deleteById(Id);
 	}
-
 }
